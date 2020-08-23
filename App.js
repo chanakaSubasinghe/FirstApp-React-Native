@@ -1,18 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+
+// importing images
+import iconImage from './assets/icon.png';
 
 export default function App() {
-
-  function handlePress() {
-    console.log('Text pressed!');
-  }
 
   return (
     // SafeAreaView support for new iPhone's top notch 
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={2} onPress={handlePress}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-      </Text>
+      <Text>Hello React Native</Text>
+      {/* retrieve images from local computer */}
+      <Image source={iconImage} />
+
+      {/* retrieve images from network */}
+      {/* this is not working in IOS */}
+      <Image
+        fadeDuration={1000}
+        blurRadius={1}
+        source={{
+          uri: 'https://picsum.photos/350/200',
+          width: 350,
+          height: 200
+        }} />
     </SafeAreaView>
   );
 }
@@ -20,6 +30,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue'
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    alignItems: "center"
   },
 });
