@@ -2,38 +2,24 @@ import React from 'react';
 import {
   StyleSheet,
   SafeAreaView,
-  Button,
-  Alert
+  Button
 } from 'react-native';
 
 export default function App() {
 
   return (
-    // SafeAreaView support for new iPhone's top notch 
+    // we can pass multiple objects to style attribute
+    // style={[styles.container],[containerStyle]}
     <SafeAreaView style={styles.container}>
-      {/* alert method work on both android and IOS */}
-      <Button
-        title="Click Me"
-        color="orange"
-        onPress={() => Alert.alert('My title', 'My Message', [
-          {
-            text: 'Yes',
-            onPress: () => console.log('Yes')
-          },
-          {
-            text: 'No'
-          }
-        ])} />
 
-      {/* prompt method work on only IOS */}
       <Button
         title="Click Me"
-        color="purple"
-        onPress={() => Alert.prompt('My title', 'My Message', (text) => console.log(text))} />
+        onPress={() => console.log('Yes')} />
+
     </SafeAreaView>
   );
 }
-
+// this StyleSheet,create method will validate styles - spelling mistakes
 const styles = StyleSheet.create({
   container: {
     flex: 1,
