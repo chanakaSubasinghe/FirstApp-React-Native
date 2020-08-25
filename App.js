@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import {
   StyleSheet,
   SafeAreaView,
@@ -7,14 +8,16 @@ import {
 } from 'react-native';
 
 export default function App() {
-  console.log(Dimensions.get('screen'));
+  // get device orientations
+  const { landscape, portrait } = useDeviceOrientation();
+
   return (
     // we can pass multiple objects to style attribute
     <SafeAreaView style={styles.container}>
       <View style={{
         backgroundColor: 'dodgerblue',
-        width: '50%',
-        height: 70
+        width: '100%',
+        height: landscape ? '100%' : '30%'
       }}></View>
     </SafeAreaView>
   );
