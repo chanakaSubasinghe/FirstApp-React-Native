@@ -9,13 +9,16 @@ export default function App() {
     <View style={{
       backgroundColor: '#fff',
       flex: 1,
-      flexDirection: 'row'
+      flexDirection: 'row', // horizontal
+      justifyContent: 'center', // main or primary axis
+      alignItems: 'center' // secondary axis -> default is stretch
     }}>
 
       <View style={{
         backgroundColor: 'dodgerblue',
         width: 100,
-        height: 100
+        height: 100,
+        alignSelf: 'flex-start' // change individual item
       }} />
 
       <View style={{
