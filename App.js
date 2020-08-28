@@ -16,7 +16,6 @@ export default function App() {
 
       <View style={{
         backgroundColor: 'dodgerblue',
-        flexGrow: 1, // it fill free space and this is similar to flex property
         width: 100,
         height: 100,
       }} />
@@ -24,7 +23,10 @@ export default function App() {
       <View style={{
         backgroundColor: 'gold',
         width: 100,
-        height: 100
+        height: 100,
+        top: 20,
+        left: 20,
+        position: 'absolute'
       }} />
       <View style={{
         backgroundColor: 'tomato',
