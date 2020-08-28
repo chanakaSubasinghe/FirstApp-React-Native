@@ -16,8 +16,8 @@ export default function App() {
 
       <View style={{
         backgroundColor: 'dodgerblue',
-        flexBasis: 100, // set width or height with primary axis
-        // width: 100,
+        flexGrow: 1, // it fill free space and this is similar to flex property
+        width: 100,
         height: 100,
       }} />
 
